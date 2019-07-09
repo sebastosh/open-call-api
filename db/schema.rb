@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_210227) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.string "password_digest"
     t.string "city"
     t.string "country"
     t.datetime "created_at", precision: 6, null: false

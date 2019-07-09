@@ -4,7 +4,7 @@ Backend Rails Api for Open-Call System
 
 * Ruby version 2.6.3
 
-* System dependencies: fast_jsonapi, cors, bcrypt 
+* System dependencies: fast_jsonapi, cors, bcrypt, JWT 
 
 * Database initialization: Postgres + seed.rb 
 
@@ -17,11 +17,10 @@ rake db:drop db:create db:migrate db:seed
 
 * Active api URLs with full routes
 
-   > localhost:3000/artists
-   
-   > localhost:3000/artworks
-   
    > localhost:3000/calls
    
    > localhost:3000/orgs
+
+   > localhost:3000/artists
+   
 

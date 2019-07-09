@@ -8,4 +8,29 @@ class ArtistsController < ApplicationController
         artist = Artist.find(params[:id])
         render json: ArtistSerializer.new(artist)
       end
+
+      def create
+        artist = Artist.create(artist_params)
+        if artist.valid?
+            # payload = { artist_id: artist.id }
+
+            # token = JWT.encode payload, 'fortytwo', 'HS256'
+            
+            # render json: {token: token}
+            render json: { token: encode_token(artist_payload(artist)) }
+        else
+            render json: {errors: artist.errors.full_messages}
+        end
+
+    end
+
+    def profile
+        render json: current_artist
+    end
+
+    private
+
+    def artist_params
+        params.permit(:name, :password)
+    end
 end
