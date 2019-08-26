@@ -1,4 +1,4 @@
 class ArtistSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :city, :country, :artworks, :submits
+  attributes :name, :email, :bio, :website, :artworks, :submits
 end
