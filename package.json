@@ -5,5 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/sebastosh/open-call",
   "author": "sebastosh@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+  }
 }
