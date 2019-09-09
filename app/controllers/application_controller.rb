@@ -24,6 +24,10 @@ class ApplicationController < ActionController::API
   Artist.find(decoded_token[0]["artist_id"])
   end
 
+  def fallback_index_html
+    render :file => 'public/index.html'
+  end
+
 
 
 end

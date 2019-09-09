@@ -12,11 +12,6 @@ class ArtistsController < ApplicationController
       def create
         artist = Artist.create(artist_params)
         if artist.valid?
-            # payload = { artist_id: artist.id }
-
-            # token = JWT.encode payload, 'fortytwo', 'HS256'
-            
-            # render json: {token: token}
             render json: { token: encode_token(artist_payload(artist)) }
         else
             render json: {errors: artist.errors.full_messages}

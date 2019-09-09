@@ -11,8 +11,13 @@ class ArtworksController < ApplicationController
       end
     
     def create
-        artwork = Artwork.create(artwork_params)
+        artwork = Artwork.new(artwork_params)
+      
+        if artwork.save
         render json: artwork
+        else
+          render json: artwork.errors.full_messages
+        end
     end
 
     def artwork_params

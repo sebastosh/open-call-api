@@ -48,3 +48,5 @@ gem 'fast_jsonapi'
 
 gem "aws-sdk-s3", require: false
 
+gem "google-cloud-storage", "~> 1.8", require: false
+
