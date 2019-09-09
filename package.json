@@ -1,14 +1,24 @@
 {
   "name": "open-call",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.9.0"
+  },
   "description": "marketplace web app allowing artists to submit works for review.",
   "main": "index.js",
-  "repository": "https://github.com/sebastosh/open-call",
-  "author": "sebastosh@gmail.com",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "url": "https://github.com/sebastosh/open-call",
+    "type": "git"
+  },
+  "author": "sebastosh",
   "license": "MIT",
   "scripts": {
-    "build": "cd client && yarn install && yarn build && cd ..",
+    "build": "cd client && npm install && npm run-script build && cd ..",
     "deploy": "cp -a client/build/. public/",
-    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+    "postinstall": "npm run-script build && npm run-script deploy && echo 'Client built!'"
   }
 }
+
