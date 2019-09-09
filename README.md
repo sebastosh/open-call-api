@@ -1,5 +1,5 @@
 
-[Live Demo](https://frozen-lake-42735.herokuapp.com)
+[Live Demo](https://glacial-falls-33377.herokuapp.com/)
 
 ## Open Call
 
@@ -33,7 +33,7 @@ A marketplace web app allowing artists to submit works for review and selection 
 
 ## Demo
 
-[Live Demo](https://frozen-lake-42735.herokuapp.com)
+[Live Demo](https://glacial-falls-33377.herokuapp.com/)
 
 
 
