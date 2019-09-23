@@ -1,0 +1,58 @@
+import React from 'react';
+
+
+ class Signup extends React.Component {
+  state = {
+    name: '',
+    email: '',
+    password: '',
+    bio: '',
+    website: ''
+  }
+
+   handleSubmit = (e) => {
+    e.preventDefault()
+    fetch('/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(this.state)
+    })
+      .then(res => res.json())
+      .then(parsedResponse => {
+        localStorage.setItem('token', parsedResponse.token)
+        this.props.history.push('/')
+        if (localStorage.token !== 'undefined') {this.props.getArtist(this.state.name)} else {console.log('no token, wrong, bad')}    
+      })
+  }
+
+   handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+   render() {
+    // console.log(this.state)
+    return (
+      <div className="login-signup">
+      <form onSubmit={this.handleSubmit}>
+        Sign Up
+        <input type="text" value={this.state.name} onChange={this.handleChange} name="name" placeholder="Name" />
+        <input type="email" value={this.state.email} onChange={this.handleChange} name="email"
+        placeholder="email address" />
+        <textarea value={this.state.bio} rows="4" cols="50" onChange={this.handleChange} name="bio" placeholder="bio or short description" />
+        <input type="url" value={this.state.website} onChange={this.handleChange} name="website"
+        placeholder="https://example.com"
+        pattern="https://.*" size="30"
+        required />
+        <input type="password" value={this.state.password} onChange={this.handleChange} name="password" 
+        placeholder="password" />
+        <input type="submit" value="Sign Up!" />
+      </form>
+      </div>
+    );
+  }
+}
+
+ export default Signup;

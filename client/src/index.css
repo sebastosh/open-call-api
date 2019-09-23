@@ -65,8 +65,14 @@ a:active {
 
 /* FORM */
 
+.image-form-container {
+  display: flex;
+  justify-content: center;
+}
+
 .image-preview {
-  max-width: 100%;
+  max-height: 400px;
+  margin:20px 0;
 }
 
 /* CARDS */

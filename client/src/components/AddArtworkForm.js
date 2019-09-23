@@ -6,7 +6,7 @@ class AddArtworkForm extends React.Component {
     artWorkURL: null,
     artist_id: "",
     title: "",
-    year: 2019,
+    year: 0,
     description: "",
     medium: ""
   };
@@ -49,7 +49,7 @@ class AddArtworkForm extends React.Component {
     formData.append("artwork[description]", this.state.description);
     formData.append("artwork[medium]", this.state.medium);
 
-    fetch("http://localhost:3000/artworks", {
+    fetch('/artworks', {
       method: "POST",
       body: formData
     })
@@ -83,7 +83,7 @@ class AddArtworkForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>File</label>
           <input type="file" onChange={this.handleFile} name="title" />
-          <div >{preview}</div>
+          <div className="image-form-container" >{preview}</div>
           <label>Title</label>
           <input type="text" onChange={this.handleChange} name="title" />
 

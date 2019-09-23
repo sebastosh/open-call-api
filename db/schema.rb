@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_08_23_212250) do
   create_table "artworks", force: :cascade do |t|
     t.bigint "artist_id", null: false
     t.string "title"
-    t.date "year"
+    t.integer "year"
     t.string "description"
     t.string "medium"
     t.datetime "created_at", precision: 6, null: false
