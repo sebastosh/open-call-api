@@ -71,7 +71,7 @@ a:active {
 }
 
 .image-preview {
-  max-height: 400px;
+  max-height: 200px;
   margin:20px 0;
 }
 
@@ -85,7 +85,7 @@ a:active {
 
 .card {
   margin: 1em;
-  border: 2px solid;
+
 }
 
 .card img {
@@ -164,9 +164,9 @@ a:active {
 }
 
 .notclicked {
-  border: 0px solid black;
+  border: none;
 }
 
 .clicked {
-  border: 4px solid green;
+  border: 4px solid limegreen;
 }

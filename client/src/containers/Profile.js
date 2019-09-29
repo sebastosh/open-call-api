@@ -68,6 +68,19 @@ class Profile extends React.Component {
     });
   };
 
+  removeArtwork = response => {
+    console.log('response: ', response);
+
+    let updatedArtistWork = this.state.artistWorks.filter(
+      artwork => artwork.id !== response
+    );
+    console.log('updatedArtistWork: ', updatedArtistWork);
+
+    this.setState({
+      artistWorks: updatedArtistWork
+    });
+  };
+
   render() {
     console.log('this.state.currentArtist: ', this.state.currentArtist);
 
@@ -110,6 +123,7 @@ class Profile extends React.Component {
           <ArtWorkContainer
             artWorks={this.state.artistWorks}
             currentArtist={this.state.currentArtist}
+            removeArtwork={this.removeArtwork}
           />
         ) : null}
       </div>

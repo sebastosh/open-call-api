@@ -20,6 +20,11 @@ class ArtworksController < ApplicationController
         end
     end
 
+    def destroy
+      artwork = Artwork.find_by(id: params[:id])
+      artwork.destroy
+    end
+
     def artwork_params
         params.require(:artwork).permit!
       end

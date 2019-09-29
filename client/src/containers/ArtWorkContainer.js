@@ -6,7 +6,7 @@ class ArtWorkContainer extends React.Component {
     render() {
 
         let artistArtWork = this.props.artWorks.map(art => {
-                return <Art key={art.id} art={art} />
+                return <Art key={art.id} art={art} removeArtwork={this.props.removeArtwork} />
               })
 
         return (
