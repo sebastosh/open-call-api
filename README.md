@@ -36,24 +36,3 @@ Built at [@flatiron-school](https://github.com/flatiron-school) with [@wrfeng](h
 ## Demo
 
 [Live Demo](https://glacial-falls-33377.herokuapp.com/)
-
-
-
- 
-
-For the moment, if needed, change migration files until things get busy in frontend: 
-```
-rake db:drop db:create db:migrate db:seed
-```
-* How to run the test suite:
-```npm start```
-
-* Active api URLs with full routes
-
-   > localhost:3000/calls
-   
-   > localhost:3000/orgs
-
-   > localhost:3000/artists
-   
-
