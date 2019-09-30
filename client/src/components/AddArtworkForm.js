@@ -81,7 +81,7 @@ class AddArtworkForm extends React.Component {
       <div>
         <h3>Add an artwork:</h3>
         <form onSubmit={this.handleSubmit}>
-          <label>File</label>
+
           <input type="file" onChange={this.handleFile} name="title" />
           <div className="image-form-container" >{preview}</div>
           <label>Title</label>
@@ -106,7 +106,7 @@ class AddArtworkForm extends React.Component {
           <button type="submit" value="Add Artwork">
             Add
           </button>
-          <button onClick={this.props.closeModal}>Cancel</button>
+         
         </form>
       </div>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 import ArtWorkContainer from "./ArtWorkContainer";
 import AddArtworkForm from "../components/AddArtworkForm";
+import EditProfileForm from "../components/EditProfileForm"
 import Popup from "reactjs-popup";
 
 class Profile extends React.Component {
@@ -88,17 +89,52 @@ class Profile extends React.Component {
 
     return (
       <div className="profile">
-        <div className="profile-card">
+        {/* <div className="profile-card">
+
+        <div className="profile-header">
+        <h1>Your Portfolio</h1>
+        {/* <div className="pencil" onClick={this.openModal}>
+            ✎
+          </div>
+          <Popup
+            open={this.state.open}
+            closeOnDocumentClick
+            onClose={this.closeModal}
+          >
+            <div className="modal">
+              <div className="close" onClick={this.closeModal}>
+                ⓧ
+              </div>
+              <EditProfileForm
+                artist={this.state.currentArtist} 
+              />
+            </div>
+          </Popup>
+          <Popup
+    trigger={<div className="pencil"> ✎</div>}
+    modal
+    closeOnDocumentClick
+  >
+    <EditProfileForm
+                artist={this.state.currentArtist} 
+              />
+  </Popup>
+        </div>
+
+
+
+
+
           <h2>{this.props.artist}</h2>
           <label>Bio</label>
-          {/* <h2>{this.state.currentArtist.attributes.bio}</h2> */}
+     
           
           <label>Contact</label>
           <label>Website</label>
 
-          </div>
-          <div className="profile-card">
-
+          </div>*/}
+          <div className="profile-header"> 
+          <h1>Art works: </h1> 
           <button className="button" onClick={this.openModal}>
             Add Artwork
           </button>
@@ -108,9 +144,9 @@ class Profile extends React.Component {
             onClose={this.closeModal}
           >
             <div className="modal">
-              <button className="close" onClick={this.closeModal}>
-                &times;
-              </button>
+              <div className="close" onClick={this.closeModal}>
+                ⓧ
+              </div>
               <AddArtworkForm
                 artist={this.state.currentArtist}
                 addArtwork={this.addArtwork}

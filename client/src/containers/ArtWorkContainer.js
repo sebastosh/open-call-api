@@ -11,7 +11,7 @@ class ArtWorkContainer extends React.Component {
 
         return (
             <div>
-               <h1>Art works: </h1> 
+           
               <div className="card-container"> {artistArtWork}</div>
             </div>
         )

@@ -5,15 +5,27 @@ import React from 'react';
   state = {
     name: '',
     email: '',
-    password: '',
     bio: '',
     website: ''
   }
 
+  componentDidMount() {
+    console.log(this.props)
+
+    this.setState({
+      name: this.props.artist.attributes.name,
+    email: this.props.artist.attributes.email,
+    bio: this.props.artist.attributes.bio,
+    website: this.props.artist.attributes.website
+    })
+  }
+
    handleSubmit = (e) => {
+     console.log('e: ', e);
     e.preventDefault()
-    fetch('/signup', {
-      method: 'POST',
+    debugger
+    fetch('/artists', {
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json'
@@ -21,10 +33,8 @@ import React from 'react';
       body: JSON.stringify(this.state)
     })
       .then(res => res.json())
-      .then(parsedResponse => {
-        localStorage.setItem('token', parsedResponse.token)
-        this.props.history.push('/')
-        if (localStorage.token !== 'undefined') {this.props.getArtist(this.state.name)} else {console.log('no token, wrong, bad')}    
+      .then(response => {
+        console.log('response: ', response);
       })
   }
 
@@ -32,12 +42,11 @@ import React from 'react';
     this.setState({ [e.target.name]: e.target.value })
   }
 
-   render() {
-    // console.log(this.state)
+  render() {
+ 
     return (
-      <div className="login-signup">
+
       <form onSubmit={this.handleSubmit}>
-        Sign Up
         <input type="text" value={this.state.name} onChange={this.handleChange} name="name" placeholder="Name" />
         <input type="email" value={this.state.email} onChange={this.handleChange} name="email"
         placeholder="email address" />
@@ -45,12 +54,10 @@ import React from 'react';
         <input type="url" value={this.state.website} onChange={this.handleChange} name="website"
         placeholder="https://example.com"
         pattern="https://.*" size="30"
-        required />
-        <input type="password" value={this.state.password} onChange={this.handleChange} name="password" 
-        placeholder="password" />
-        <input type="submit" value="Sign Up!" />
+        />
+        <input type="submit" value="Update" />
       </form>
-      </div>
+
     );
   }
 }
