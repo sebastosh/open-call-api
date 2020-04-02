@@ -33,6 +33,38 @@ Built at [@flatiron-school](https://github.com/flatiron-school) with [@wrfeng](h
 * Artists submit a selection of pre-uploaded portfolio images.
 * An organization chooses the finalist artist for each of their open calls
 
+## Install
+
+* The App is built to deploy in one place (currently Heroku) with the React frontend located in the /client folder.  To get this running on a local machine: 
+
+-Clone this repository and:
+
+Backend port: 3001
+Frontend port: 3000
+```
+cd open-call
+bundle install
+rake db:create db:migrate db:seed
+rails s -p 3001
+```
+Endpoints: 
+```
+/artists
+/artworks
+/calls
+/orgs
+```
+
+-Open a new terminal with the same directory location:
+```
+cd client
+yarn install
+yarn start
+```
+
+
+
+
 ## Demo
 
 [Live Demo](https://glacial-falls-33377.herokuapp.com/)
